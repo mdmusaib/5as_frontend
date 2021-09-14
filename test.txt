@@ -1,0 +1,182 @@
+pending works..
+
+get request =>https://fifthanglestudio.herokuapp.com/api/project/fetcgAllProject for show project leads tables api
+get => api/getThisMonth =>for calendar view
+get=>api/task/fetchEmployeeTask=>for employee table where it will show start and stop
+
+post=>api/startEndTimer=> request body>task_id,employee_id (based on status)
+
+
+post =>api/updatePayment=> request body->
+'quote_id'=>'required',
+            'project_id'=>'required',
+            'paid_amount'=>'required'
+
+post=>api/employee/setDate-> 'employee_id'=>'required',
+            'unavailable_date'=>'required',
+
+load employee name dropdown in project view from getAllUser()
+
+
+
+pls find the password for paticualr users
+
+{
+        // check if table users is empty
+        if (DB::table('users')->get()->count() == 0) {
+            DB::table('users')->insert([
+
+            [
+                'name' => "Super Admin",
+                'email' => 'admin@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>1,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+            
+            [
+                'name' => "Sales Lead",
+                'email' => 'lead@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>2,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+            
+            [
+                'name' => "BD Exec",
+                'email' => 'bde@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>3,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+            [
+                'name' => "Event Co-ordinator",
+                'email' => 'event-co@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>4,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+            [
+                'name' => "Data Manager",
+                'email' => 'datamanager@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>5,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+            [
+                'name' => "Ops Exec",
+                'email' => 'ops@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>6,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+                
+            [
+                'name' => "Photography Lead",
+                'email' => 'photography_lead@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>6,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+                
+            [
+                'name' => "Videography Lead",
+                'email' => 'videography_lead@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>6,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+                
+            [
+                'name' => "Photoshop Lead",
+                'email' => 'photoshop_lead@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>6,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+                
+            [
+                'name' => "Finance Lead",
+                'email' => 'finance_lead@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>6,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+                
+            [
+                'name' => "Photography Exec",
+                'email' => 'photography@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>7,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+            [
+                'name' => "Videography Exec",
+                'email' => 'videography@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>8,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+            [
+                'name' => "Photoshop Exec",
+                'email' => 'photoshop@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>9,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+            [
+                'name' => "Retouch ",
+                'email' => 'retouch@5as.com',
+                'password' => Hash::make('admin123'),
+                'phone' => mt_rand(1000000000, 9999999999),
+                'status'=>true,
+                'role'=>10,
+                'api_token' => Str::random(60),
+                'remember_token' => Str::random(10),
+            ],
+
+        ]);
+        } else {
+            echo "\e Table is not empty, therefore NOT Able to create user! ";
+        }
+    }
+
